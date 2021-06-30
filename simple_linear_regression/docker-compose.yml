@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+
+  api:
+    container_name: linear_regression # Name can be anything
+    restart: always
+    build: api
+    ports:
+      - "8000:8000"
+    command: gunicorn -w 1 -b :8000 app:app
+
